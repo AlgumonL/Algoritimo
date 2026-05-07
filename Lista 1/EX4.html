@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Quanto tempo você dorme por noite:<br>
+    <input type="text" id="input_sono"><br>
+
+    <button onclick="f()">Aplicar</button>
+
+    <div id="div_mensagem"></div>
+
+</body>
+</html>
+<script>
+    function f(){
+        let sono = Number(input_sono.value);
+        let mensagem = ``;
+        if(sono < 0){
+            mensagem = `Mago do Tempo!!`;
+        }else if(sono < 4){
+            mensagem = `#zumbi`;
+        }else if(sono < 7){
+            mensagem = `Pouca concentração`;
+        }else if(sono < 9){
+            mensagem = `Boa concentração`;
+        }else if(sono >= 9){
+            mensagem = `Olha a preguiça!`;
+        }
+        div_mensagem.innerHTML = `${mensagem}`;
+    }
+</script>

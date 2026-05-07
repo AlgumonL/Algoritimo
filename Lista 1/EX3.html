@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Insira seu gênero:<br>
+    <input type="text" id="input_sexo"><br><br>
+    Insira sua idade:<br>
+    <input type="text" id="input_idade"><br>
+
+    <button onclick="f()">Aplicar</button>
+
+    <div id="div_mensagem"></div>
+
+</body>
+</html>
+<script>
+    
+    function f(){
+        let sexo = input_sexo.value;
+        let idade = Number(input_idade.value);
+        let mensagem = ``;
+
+        if (idade < 0) {
+            mensagem = `Valor inválido`;
+        } else if (sexo == `Homem`) {
+            if (idade >= 18) {
+                mensagem = `Você é Homem maior de idade`;
+            } else {
+                mensagem = `Você é Homem e menino`;
+            }
+        } else if (sexo == `Mulher`) {
+            if (idade >= 18) {
+                mensagem = `Você é Mulher maior de idade`;
+            } else {
+                mensagem = `Você é Mulher e menina`;
+            }
+        } else {
+            mensagem = `Conteúdo inválido`;
+        }
+
+        div_mensagem.innerHTML = `${mensagem}`;
+    }
+
+
+</script>

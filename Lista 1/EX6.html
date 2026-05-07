@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    Informe o primeiro numero:<br>
+    <input type="text" id="input_n1"><br><br>
+    
+    Informe o primeiro numero:<br>
+    <input type="text" id="input_n2"><br><br>
+    
+    Informe o primeiro numero:<br>
+    <input type="text" id="input_n3"><br>
+
+    <button onclick="f()">Ordenar</button>
+
+    <div id="ordenar"></div>
+    
+</body>
+</html>
+
+<script>
+    function f(){
+        let n1 = Number(input_n1.value);
+        let n2 = Number(input_n2.value);
+        let n3 = Number(input_n3.value);
+        let mensagem = ``;
+
+        if(n1 <= n2 && n1 <= n3){
+            if(n2 <= n3){
+                mensagem = `${n3} maior ou igual que ${n2} maior ou igual que ${n1}`;
+            }else{
+                mensagem = `${n2} maior ou igual que ${n3} maior ou igual que ${n1}`;
+            }
+        }else if(n2 < n1 && n2 <= n3){
+            if(n1 < n3){
+                mensagem = `${n3} maior ou igual que ${n1} maior ou igual que ${n2}`;
+            }else{
+                mensagem = `${n1} maior ou igual que ${n3} maior ou igual que ${n2}`;
+            }
+        }else if(n3 < n1 && n3 < n2){
+            if(n2 < n1){
+                mensagem = `${n1} maior ou igual que ${n2} maior ou igual que ${n3}`;
+            }else{
+                mensagem = `${n2} maior ou igual que ${n1} maior ou igual que ${n3}`;
+            }
+        }
+        ordenar.innerHTML = `${mensagem}`;
+    }
+</script>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Qual seu salário?<br>
+    <input type="text" id="input_salario"><br><br>
+
+    Qual o valor mensal da faculdade?<br>
+    <input type="text" id="input_faculdade"><br>
+
+    <button onclick="f()">Aplicar</button>
+
+    <div id="div_mensagem"></div>
+
+</body>
+</html>
+
+<script>
+    function f(){
+        let salario = Number(input_salario.value);
+        let faculdade = Number(input_faculdade.value);
+        let media = (salario - faculdade)/30;
+        let mensagem = ``;
+
+        if(media < 0){
+            mensagem = `Sua renda não te sustenta! #BusqueRendaExtra`;
+        }else if(media < 15){
+            mensagem = `#ControleTotal`;
+        }else if(media <= 20){
+            mensagem = `#RagazzoSabado`;
+        }else if(media <= 25){
+            mensagem = `#CinemaNamorada`;
+        }else if(media <= 30){
+            mensagem = `#NovoGame`;
+        }else if(media >30){
+            mensagem = `#ToBonito`;
+        }
+        div_mensagem.innerHTML = `${media}, <br>${mensagem}`;
+
+    }
+    
+</script>
